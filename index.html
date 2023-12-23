@@ -25,8 +25,45 @@
                         <p>humidity</p>
                     </div>
                 </div>
+            <div class="col"><img src="images/wind.png">
+                    <div>
+                        <p class="wind">15km/h</p>
+                        <p>Wind Speed</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+<script>
+
+const apiKet = "1ee6f35c5208b9c96748e1681c9b68a9";
+const apiUrl= "https://api.openweathermap.org/data/2.5/weather?q=rabat&appid=1ee6f35c5208b9c96748e1681c9b68a9&units=metric&q=bangalore";
+
+const searchBox = document.querySelector(".search input");
+const searchBtn = document.querySelector(".search button");
+const weatherIcon = document.querySelector("weather-icon");
+
+async function checkWeather(city){
+    const response = await fetch(apiUrl + city + `&appid=$(apiKey)`);
+    var data = await response.json();
+    console.log(data);
+    document.querySelector(".city").innerHTML = data.name;
+    document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°C";
+    document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
+    document.querySelector(".wind").innerHTML = data.wind.speed + " km/h";
+
+    if(data.weather[0].main == "Clouds"){
+        weatherIcon.src = "images/cloudes.png";
+    }
+
+}
+
+searchBtn.addEventListener("click", ()=>{
+    checkWeather(searchBox.value);
+})
+
+checkWeather();
+
+</script>
 </body>
 </html>
