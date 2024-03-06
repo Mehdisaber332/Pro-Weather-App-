@@ -17,3 +17,5 @@ WeatherApp is a lightweight weather application that provides real-time weather 
 
    ```bash
    git clone https://github.com/Mehdisaber332/Pro-Weather-App.git
+
+## New features working on : Make the app more cinematic
