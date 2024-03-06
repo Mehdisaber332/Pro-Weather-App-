@@ -12,10 +12,9 @@ WeatherApp is a lightweight weather application that provides real-time weather 
 - User-friendly interface
 - Responsive design
 
+## New features working on : Make the app more cinematic
 
 ## Clone the repository:
 
    ```bash
    git clone https://github.com/Mehdisaber332/Pro-Weather-App.git
-
-## New features working on : Make the app more cinematic
